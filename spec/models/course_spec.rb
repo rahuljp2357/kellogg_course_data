@@ -10,6 +10,8 @@ RSpec.describe Course, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:proves) }
+
     it { should have_many(:quarters) }
 
     end

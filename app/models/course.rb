@@ -6,6 +6,10 @@ class Course < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :proves,
+             :through => :course_offerings,
+             :source => :prof
+
   has_many   :quarters,
              :through => :course_offerings,
              :source => :quarter
