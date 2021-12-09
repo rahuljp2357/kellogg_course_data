@@ -3,7 +3,7 @@ class CourseOfferingsController < ApplicationController
 
   # GET /course_offerings
   def index
-    @course_offerings = CourseOffering.all
+    @course_offerings = CourseOffering.page(params[:page]).per(10)
   end
 
   # GET /course_offerings/1

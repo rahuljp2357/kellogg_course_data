@@ -3,7 +3,7 @@ class ProfessorsController < ApplicationController
 
   # GET /professors
   def index
-    @professors = Professor.all
+    @professors = Professor.page(params[:page]).per(10)
   end
 
   # GET /professors/1

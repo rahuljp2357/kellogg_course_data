@@ -3,7 +3,7 @@ class QuartersController < ApplicationController
 
   # GET /quarters
   def index
-    @quarters = Quarter.all
+    @quarters = Quarter.page(params[:page]).per(10)
   end
 
   # GET /quarters/1

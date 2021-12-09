@@ -3,7 +3,7 @@ class UserNeedsController < ApplicationController
 
   # GET /user_needs
   def index
-    @user_needs = UserNeed.all
+    @user_needs = UserNeed.page(params[:page]).per(10)
   end
 
   # GET /user_needs/1

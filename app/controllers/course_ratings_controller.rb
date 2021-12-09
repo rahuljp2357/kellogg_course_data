@@ -5,7 +5,7 @@ class CourseRatingsController < ApplicationController
 
   # GET /course_ratings
   def index
-    @course_ratings = CourseRating.all
+    @course_ratings = CourseRating.page(params[:page]).per(10)
   end
 
   # GET /course_ratings/1
