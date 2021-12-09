@@ -1,6 +1,10 @@
 class Professor < ApplicationRecord
   # Direct associations
 
+  has_many   :course_offerings,
+             :foreign_key => "prof_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations

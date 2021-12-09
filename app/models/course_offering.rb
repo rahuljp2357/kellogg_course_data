@@ -1,6 +1,9 @@
 class CourseOffering < ApplicationRecord
   # Direct associations
 
+  belongs_to :prof,
+             :class_name => "Professor"
+
   belongs_to :course
 
   # Indirect associations

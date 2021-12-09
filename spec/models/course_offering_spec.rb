@@ -4,6 +4,8 @@ RSpec.describe CourseOffering, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:prof) }
+
     it { should belong_to(:course) }
 
     end
