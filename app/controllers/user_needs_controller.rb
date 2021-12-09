@@ -3,7 +3,8 @@ class UserNeedsController < ApplicationController
 
   # GET /user_needs
   def index
-    @user_needs = UserNeed.page(params[:page]).per(10)
+    @q = UserNeed.ransack(params[:q])
+    @user_needs = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
   end
 
   # GET /user_needs/1

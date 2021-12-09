@@ -5,7 +5,8 @@ class CourseRatingsController < ApplicationController
 
   # GET /course_ratings
   def index
-    @course_ratings = CourseRating.page(params[:page]).per(10)
+    @q = CourseRating.ransack(params[:q])
+    @course_ratings = @q.result(:distinct => true).includes(:user, :course_offering, :comments, :prof).page(params[:page]).per(10)
   end
 
   # GET /course_ratings/1

@@ -3,7 +3,8 @@ class QuartersController < ApplicationController
 
   # GET /quarters
   def index
-    @quarters = Quarter.page(params[:page]).per(10)
+    @q = Quarter.ransack(params[:q])
+    @quarters = @q.result(:distinct => true).includes(:course_offerings, :courses).page(params[:page]).per(10)
   end
 
   # GET /quarters/1

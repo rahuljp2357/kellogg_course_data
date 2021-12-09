@@ -3,7 +3,8 @@ class ProfessorsController < ApplicationController
 
   # GET /professors
   def index
-    @professors = Professor.page(params[:page]).per(10)
+    @q = Professor.ransack(params[:q])
+    @professors = @q.result(:distinct => true).includes(:course_offerings, :course_ratings, :courses).page(params[:page]).per(10)
   end
 
   # GET /professors/1
