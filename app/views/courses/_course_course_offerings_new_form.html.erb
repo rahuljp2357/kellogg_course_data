@@ -23,7 +23,7 @@
     <%= f.label :prof_id %>
 
     <!-- Input for prof_id start -->
-    <%= f.text_field :prof_id, class: "form-control" %>
+    <%= f.collection_select :prof_id, Professor.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for prof_id end -->
   </div>
   <!-- Label and input for prof_id end -->

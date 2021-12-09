@@ -68,7 +68,7 @@
 
     <%= f.label :prof_id %>
     <!-- Input for prof_id start -->
-    <%= f.number_field :prof_id, class: prof_class, placeholder: "Enter prof" %>
+    <%= f.collection_select :prof_id, Professor.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for prof_id end -->
     <% if prof_was_invalid %>
       <% course_offering.errors.full_messages_for(:prof).each do |message| %>
