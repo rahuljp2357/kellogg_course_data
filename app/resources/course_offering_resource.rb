@@ -8,6 +8,8 @@ class CourseOfferingResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :course_ratings
+
   belongs_to :prof,
              resource: ProfessorResource
 
