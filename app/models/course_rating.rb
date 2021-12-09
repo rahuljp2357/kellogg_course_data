@@ -1,6 +1,8 @@
 class CourseRating < ApplicationRecord
   # Direct associations
 
+  belongs_to :course_offering
+
   belongs_to :user
 
   # Indirect associations

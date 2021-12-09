@@ -1,6 +1,9 @@
 class CourseOffering < ApplicationRecord
   # Direct associations
 
+  has_many   :course_ratings,
+             :dependent => :destroy
+
   belongs_to :prof,
              :class_name => "Professor"
 
