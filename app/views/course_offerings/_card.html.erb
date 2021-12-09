@@ -1,0 +1,51 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Course Offering #<%= course_offering.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Course</dt>
+      <!-- Display course_id start -->
+      <dd><%= course_offering.course_id %></dd>
+      <!-- Display course_id end -->
+
+      <dt>Quarter</dt>
+      <!-- Display quarter_id start -->
+      <dd><%= course_offering.quarter_id %></dd>
+      <!-- Display quarter_id end -->
+
+      <dt>Prof</dt>
+      <!-- Display prof_id start -->
+      <dd><%= course_offering.prof_id %></dd>
+      <!-- Display prof_id end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back course_offering, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link course_offering start -->
+      <div class="col">
+        <%= link_to edit_course_offering_url(course_offering), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link course_offering end -->
+
+      <!-- Delete link course_offering start -->
+      <div class="col">
+        <%= link_to course_offering, method: :delete, data: { confirm: "Do you really want to delete this course_offering?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link course_offering end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(course_offering.updated_at) %> ago
+  </div>
+</div>

@@ -1,0 +1,83 @@
+<% was_validated = course_offering.errors.any? %>
+
+<%= form_with(model: course_offering, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for course_id start -->
+  <div class="form-group">
+    <% course_class = "form-control" %>
+    <% course_was_invalid = course_offering.errors.include?(:course) %>
+
+    <% if was_validated %>
+      <% if course_was_invalid %>
+        <% course_class << " is-invalid" %>
+      <% else %>
+        <% course_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :course_id %>
+    <!-- Input for course_id start -->
+    <%= f.number_field :course_id, class: course_class, placeholder: "Enter course" %>
+    <!-- Input for course_id end -->
+    <% if course_was_invalid %>
+      <% course_offering.errors.full_messages_for(:course).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for course_id end -->
+  <!-- Label and input for quarter_id start -->
+  <div class="form-group">
+    <% quarter_class = "form-control" %>
+    <% quarter_was_invalid = course_offering.errors.include?(:quarter) %>
+
+    <% if was_validated %>
+      <% if quarter_was_invalid %>
+        <% quarter_class << " is-invalid" %>
+      <% else %>
+        <% quarter_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :quarter_id %>
+    <!-- Input for quarter_id start -->
+    <%= f.number_field :quarter_id, class: quarter_class, placeholder: "Enter quarter" %>
+    <!-- Input for quarter_id end -->
+    <% if quarter_was_invalid %>
+      <% course_offering.errors.full_messages_for(:quarter).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for quarter_id end -->
+  <!-- Label and input for prof_id start -->
+  <div class="form-group">
+    <% prof_class = "form-control" %>
+    <% prof_was_invalid = course_offering.errors.include?(:prof) %>
+
+    <% if was_validated %>
+      <% if prof_was_invalid %>
+        <% prof_class << " is-invalid" %>
+      <% else %>
+        <% prof_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :prof_id %>
+    <!-- Input for prof_id start -->
+    <%= f.number_field :prof_id, class: prof_class, placeholder: "Enter prof" %>
+    <!-- Input for prof_id end -->
+    <% if prof_was_invalid %>
+      <% course_offering.errors.full_messages_for(:prof).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for prof_id end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
