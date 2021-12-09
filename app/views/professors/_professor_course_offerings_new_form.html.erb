@@ -17,7 +17,7 @@
     <%= f.label :quarter_id %>
 
     <!-- Input for quarter_id start -->
-    <%= f.text_field :quarter_id, class: "form-control" %>
+    <%= f.collection_select :quarter_id, Quarter.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for quarter_id end -->
   </div>
   <!-- Label and input for quarter_id end -->

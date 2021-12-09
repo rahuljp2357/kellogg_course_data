@@ -42,7 +42,7 @@
 
     <%= f.label :quarter_id %>
     <!-- Input for quarter_id start -->
-    <%= f.number_field :quarter_id, class: quarter_class, placeholder: "Enter quarter" %>
+    <%= f.collection_select :quarter_id, Quarter.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for quarter_id end -->
     <% if quarter_was_invalid %>
       <% course_offering.errors.full_messages_for(:quarter).each do |message| %>
