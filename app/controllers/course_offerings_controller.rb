@@ -8,6 +8,7 @@ class CourseOfferingsController < ApplicationController
 
   # GET /course_offerings/1
   def show
+    @course_rating = CourseRating.new
   end
 
   # GET /course_offerings/new
@@ -24,7 +25,12 @@ class CourseOfferingsController < ApplicationController
     @course_offering = CourseOffering.new(course_offering_params)
 
     if @course_offering.save
-      redirect_to @course_offering, notice: 'Course offering was successfully created.'
+      message = 'CourseOffering was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @course_offering, notice: message
+      end
     else
       render :new
     end

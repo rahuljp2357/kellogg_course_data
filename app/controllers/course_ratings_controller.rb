@@ -8,6 +8,7 @@ class CourseRatingsController < ApplicationController
 
   # GET /course_ratings/1
   def show
+    @comment = Comment.new
   end
 
   # GET /course_ratings/new
@@ -24,7 +25,12 @@ class CourseRatingsController < ApplicationController
     @course_rating = CourseRating.new(course_rating_params)
 
     if @course_rating.save
-      redirect_to @course_rating, notice: 'Course rating was successfully created.'
+      message = 'CourseRating was successfully created.'
+      if Rails.application.routes.recognize_path(request.referrer)[:controller] != Rails.application.routes.recognize_path(request.path)[:controller]
+        redirect_back fallback_location: request.referrer, notice: message
+      else
+        redirect_to @course_rating, notice: message
+      end
     else
       render :new
     end

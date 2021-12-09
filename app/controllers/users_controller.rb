@@ -8,6 +8,8 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @comment = Comment.new
+    @course_rating = CourseRating.new
   end
 
   # GET /users/new

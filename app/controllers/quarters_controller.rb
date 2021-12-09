@@ -8,6 +8,7 @@ class QuartersController < ApplicationController
 
   # GET /quarters/1
   def show
+    @course_offering = CourseOffering.new
   end
 
   # GET /quarters/new

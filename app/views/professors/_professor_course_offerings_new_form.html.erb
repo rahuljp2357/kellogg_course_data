@@ -1,0 +1,32 @@
+<!-- Form course_offering start -->
+<%= form_with(model: @course_offering, local: true) do |f| %>
+<!-- Form course_offering end -->
+
+  <!-- Label and input for course_id start -->
+  <div class="form-group">
+    <%= f.label :course_id %>
+
+    <!-- Input for course_id start -->
+    <%= f.text_field :course_id, class: "form-control" %>
+    <!-- Input for course_id end -->
+  </div>
+  <!-- Label and input for course_id end -->
+
+  <!-- Label and input for quarter_id start -->
+  <div class="form-group">
+    <%= f.label :quarter_id %>
+
+    <!-- Input for quarter_id start -->
+    <%= f.text_field :quarter_id, class: "form-control" %>
+    <!-- Input for quarter_id end -->
+  </div>
+  <!-- Label and input for quarter_id end -->
+
+  <!-- Label and input for prof_id start -->
+  <!-- Input for prof_id start -->
+  <%= f.hidden_field :prof_id, value: @professor.id %>
+  <!-- Input for prof_id end -->
+  <!-- Label and input for prof_id end -->
+
+  <%= f.submit "Create course offering", class: "btn btn-block btn-outline-secondary" %>
+<% end %>

@@ -1,0 +1,102 @@
+<!-- Form course_rating start -->
+<%= form_with(model: @course_rating, local: true) do |f| %>
+<!-- Form course_rating end -->
+
+  <!-- Label and input for user_id start -->
+  <!-- Input for user_id start -->
+  <%= f.hidden_field :user_id, value: @user.id %>
+  <!-- Input for user_id end -->
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for facet_1_rating start -->
+  <div class="form-group">
+    <%= f.label :facet_1_rating %>
+
+    <!-- Input for facet_1_rating start -->
+    <%= f.text_field :facet_1_rating, class: "form-control" %>
+    <!-- Input for facet_1_rating end -->
+  </div>
+  <!-- Label and input for facet_1_rating end -->
+
+  <!-- Label and input for facet_2_rating start -->
+  <div class="form-group">
+    <%= f.label :facet_2_rating %>
+
+    <!-- Input for facet_2_rating start -->
+    <%= f.text_field :facet_2_rating, class: "form-control" %>
+    <!-- Input for facet_2_rating end -->
+  </div>
+  <!-- Label and input for facet_2_rating end -->
+
+  <!-- Label and input for facet_3_rating start -->
+  <div class="form-group">
+    <%= f.label :facet_3_rating %>
+
+    <!-- Input for facet_3_rating start -->
+    <%= f.text_field :facet_3_rating, class: "form-control" %>
+    <!-- Input for facet_3_rating end -->
+  </div>
+  <!-- Label and input for facet_3_rating end -->
+
+  <!-- Label and input for facet_4_rating start -->
+  <div class="form-group">
+    <%= f.label :facet_4_rating %>
+
+    <!-- Input for facet_4_rating start -->
+    <%= f.text_field :facet_4_rating, class: "form-control" %>
+    <!-- Input for facet_4_rating end -->
+  </div>
+  <!-- Label and input for facet_4_rating end -->
+
+  <!-- Label and input for facet_5_rating start -->
+  <div class="form-group">
+    <%= f.label :facet_5_rating %>
+
+    <!-- Input for facet_5_rating start -->
+    <%= f.text_field :facet_5_rating, class: "form-control" %>
+    <!-- Input for facet_5_rating end -->
+  </div>
+  <!-- Label and input for facet_5_rating end -->
+
+  <!-- Label and input for descriptive_q1 start -->
+  <div class="form-group">
+    <%= f.label :descriptive_q1 %>
+
+    <!-- Input for descriptive_q1 start -->
+    <%= f.text_field :descriptive_q1, class: "form-control" %>
+    <!-- Input for descriptive_q1 end -->
+  </div>
+  <!-- Label and input for descriptive_q1 end -->
+
+  <!-- Label and input for descriptive_q2 start -->
+  <div class="form-group">
+    <%= f.label :descriptive_q2 %>
+
+    <!-- Input for descriptive_q2 start -->
+    <%= f.text_field :descriptive_q2, class: "form-control" %>
+    <!-- Input for descriptive_q2 end -->
+  </div>
+  <!-- Label and input for descriptive_q2 end -->
+
+  <!-- Label and input for descriptive_q3 start -->
+  <div class="form-group">
+    <%= f.label :descriptive_q3 %>
+
+    <!-- Input for descriptive_q3 start -->
+    <%= f.text_field :descriptive_q3, class: "form-control" %>
+    <!-- Input for descriptive_q3 end -->
+  </div>
+  <!-- Label and input for descriptive_q3 end -->
+
+  <!-- Label and input for course_offering_id start -->
+  <div class="form-group">
+    <%= f.label :course_offering_id %>
+
+    <!-- Input for course_offering_id start -->
+    <%= f.text_field :course_offering_id, class: "form-control" %>
+    <!-- Input for course_offering_id end -->
+  </div>
+  <!-- Label and input for course_offering_id end -->
+
+  <%= f.submit "Create course rating", class: "btn btn-block btn-outline-secondary" %>
+<% end %>
