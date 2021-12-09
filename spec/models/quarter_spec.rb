@@ -10,6 +10,8 @@ RSpec.describe Quarter, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:courses) }
+
     end
 
     describe "Validations" do

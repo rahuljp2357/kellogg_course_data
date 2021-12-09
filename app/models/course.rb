@@ -6,6 +6,10 @@ class Course < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :quarters,
+             :through => :course_offerings,
+             :source => :quarter
+
   # Validations
 
   # Scopes
