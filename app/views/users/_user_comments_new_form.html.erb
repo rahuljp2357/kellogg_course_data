@@ -13,7 +13,7 @@
     <%= f.label :course_rating_id %>
 
     <!-- Input for course_rating_id start -->
-    <%= f.text_field :course_rating_id, class: "form-control" %>
+    <%= f.collection_select :course_rating_id, CourseRating.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for course_rating_id end -->
   </div>
   <!-- Label and input for course_rating_id end -->

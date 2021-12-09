@@ -42,7 +42,7 @@
 
     <%= f.label :course_rating_id %>
     <!-- Input for course_rating_id start -->
-    <%= f.number_field :course_rating_id, class: course_rating_class, placeholder: "Enter course rating" %>
+    <%= f.collection_select :course_rating_id, CourseRating.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for course_rating_id end -->
     <% if course_rating_was_invalid %>
       <% comment.errors.full_messages_for(:course_rating).each do |message| %>
