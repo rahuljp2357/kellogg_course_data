@@ -7,7 +7,11 @@
     <dl class="mb-1">
       <dt>User</dt>
       <!-- Display user_id start -->
-      <dd><%= course_rating.user_id %></dd>
+      <dd>
+        <% if @course_rating.user.present? %>
+          <%= link_to course_rating.user, course_rating.user %>
+        <% end %>
+      </dd>
       <!-- Display user_id end -->
 
       <dt>Facet 1 rating</dt>
@@ -52,7 +56,11 @@
 
       <dt>Course offering</dt>
       <!-- Display course_offering_id start -->
-      <dd><%= course_rating.course_offering_id %></dd>
+      <dd>
+        <% if @course_rating.course_offering.present? %>
+          <%= link_to course_rating.course_offering, course_rating.course_offering %>
+        <% end %>
+      </dd>
       <!-- Display course_offering_id end -->
 
     </dl>

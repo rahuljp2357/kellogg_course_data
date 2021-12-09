@@ -7,12 +7,20 @@
     <dl class="mb-1">
       <dt>User</dt>
       <!-- Display user_id start -->
-      <dd><%= comment.user_id %></dd>
+      <dd>
+        <% if @comment.user.present? %>
+          <%= link_to comment.user, comment.user %>
+        <% end %>
+      </dd>
       <!-- Display user_id end -->
 
       <dt>Course rating</dt>
       <!-- Display course_rating_id start -->
-      <dd><%= comment.course_rating_id %></dd>
+      <dd>
+        <% if @comment.course_rating.present? %>
+          <%= link_to comment.course_rating, comment.course_rating %>
+        <% end %>
+      </dd>
       <!-- Display course_rating_id end -->
 
     </dl>

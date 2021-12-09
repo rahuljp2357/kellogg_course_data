@@ -7,17 +7,29 @@
     <dl class="mb-1">
       <dt>Course</dt>
       <!-- Display course_id start -->
-      <dd><%= course_offering.course_id %></dd>
+      <dd>
+        <% if @course_offering.course.present? %>
+          <%= link_to course_offering.course, course_offering.course %>
+        <% end %>
+      </dd>
       <!-- Display course_id end -->
 
       <dt>Quarter</dt>
       <!-- Display quarter_id start -->
-      <dd><%= course_offering.quarter_id %></dd>
+      <dd>
+        <% if @course_offering.quarter.present? %>
+          <%= link_to course_offering.quarter, course_offering.quarter %>
+        <% end %>
+      </dd>
       <!-- Display quarter_id end -->
 
       <dt>Prof</dt>
       <!-- Display prof_id start -->
-      <dd><%= course_offering.prof_id %></dd>
+      <dd>
+        <% if @course_offering.prof.present? %>
+          <%= link_to course_offering.prof, course_offering.prof %>
+        <% end %>
+      </dd>
       <!-- Display prof_id end -->
 
     </dl>
