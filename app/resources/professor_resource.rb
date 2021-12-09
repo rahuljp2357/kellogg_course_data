@@ -12,4 +12,12 @@ class ProfessorResource < ApplicationResource
 
   # Indirect associations
 
+  has_many :course_ratings do
+    assign_each do |professor, course_ratings|
+      course_ratings.select do |c|
+        c.id.in?(professor.course_ratings.map(&:id))
+      end
+    end
+  end
+
 end

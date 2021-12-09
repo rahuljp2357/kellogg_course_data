@@ -23,4 +23,12 @@ class CourseRatingResource < ApplicationResource
 
   # Indirect associations
 
+  has_one    :prof,
+             resource: ProfessorResource
+
+  filter :prof_id, :integer do
+    eq do |scope, value|
+      scope.eager_load(:prof).where(:course_offerings => {:prof_id => value})
+    end
+  end
 end
