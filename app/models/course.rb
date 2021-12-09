@@ -1,6 +1,9 @@
 class Course < ApplicationRecord
   # Direct associations
 
+  has_many   :course_offerings,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
