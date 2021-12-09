@@ -15,8 +15,10 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <%= link_to course_rating, method: :delete, data: { confirm: "Do you really want to delete this course_rating" } do %>
-          <i class="fas fa-trash-alt"></i>
+        <% if current_user == course_rating.user %>
+          <%= link_to course_rating, method: :delete do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
         <% end %>
         <!-- Delete link end -->
 

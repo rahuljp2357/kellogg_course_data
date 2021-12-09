@@ -64,16 +64,20 @@
 
       <!-- Edit link course_rating start -->
       <div class="col">
-        <%= link_to edit_course_rating_url(course_rating), class: "btn btn-block btn-outline-secondary" do %>
-          <i class="fas fa-edit"></i>
+        <% if current_user == @course_rating.user %>
+          <%= link_to edit_course_rating_url(course_rating), class: "btn btn-block btn-sm btn-outline-secondary" do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
         <% end %>
       </div>
       <!-- Edit link course_rating end -->
 
       <!-- Delete link course_rating start -->
       <div class="col">
-        <%= link_to course_rating, method: :delete, data: { confirm: "Do you really want to delete this course_rating?" }, class: "btn btn-block btn-outline-secondary" do %>
-          <i class="fas fa-trash-alt"></i>
+        <% if current_user == @course_rating.user %>
+          <%= link_to course_rating, method: :delete, data: { confirm: "Do you really want to delete this course_rating?" }, class: "btn btn-block btn-outline-secondary" do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
         <% end %>
       </div>
       <!-- Delete link course_rating end -->
