@@ -1,6 +1,8 @@
 class CourseOffering < ApplicationRecord
   # Direct associations
 
+  belongs_to :quarter
+
   has_many   :course_ratings,
              :dependent => :destroy
 
