@@ -15,6 +15,8 @@ class CourseRatingResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :comments
+
   belongs_to :course_offering
 
   belongs_to :user
