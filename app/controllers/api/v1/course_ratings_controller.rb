@@ -13,7 +13,7 @@ class Api::V1::CourseRatingsController < Api::V1::GraphitiController
     course_rating = CourseRatingResource.build(params)
 
     if course_rating.save
-      render jsonapi: course_rating, status: 201
+      render jsonapi: course_rating, status: :created
     else
       render jsonapi_errors: course_rating
     end
@@ -33,7 +33,7 @@ class Api::V1::CourseRatingsController < Api::V1::GraphitiController
     course_rating = CourseRatingResource.find(params)
 
     if course_rating.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: course_rating
     end

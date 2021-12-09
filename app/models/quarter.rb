@@ -2,13 +2,13 @@ class Quarter < ApplicationRecord
   # Direct associations
 
   has_many   :course_offerings,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
   has_many   :courses,
-             :through => :course_offerings,
-             :source => :course
+             through: :course_offerings,
+             source: :course
 
   # Validations
 
@@ -17,5 +17,4 @@ class Quarter < ApplicationRecord
   def to_s
     season
   end
-
 end

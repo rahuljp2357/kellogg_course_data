@@ -13,7 +13,7 @@ class Api::V1::CoursesController < Api::V1::GraphitiController
     course = CourseResource.build(params)
 
     if course.save
-      render jsonapi: course, status: 201
+      render jsonapi: course, status: :created
     else
       render jsonapi_errors: course
     end
@@ -33,7 +33,7 @@ class Api::V1::CoursesController < Api::V1::GraphitiController
     course = CourseResource.find(params)
 
     if course.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: course
     end

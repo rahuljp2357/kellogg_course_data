@@ -1,13 +1,13 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe QuarterResource, type: :resource do
-  describe 'creating' do
+  describe "creating" do
     let(:payload) do
       {
         data: {
-          type: 'quarters',
-          attributes: { }
-        }
+          type: "quarters",
+          attributes: {},
+        },
       }
     end
 
@@ -15,23 +15,24 @@ RSpec.describe QuarterResource, type: :resource do
       QuarterResource.build(payload)
     end
 
-    it 'works' do
-      expect {
-        expect(instance.save).to eq(true), instance.errors.full_messages.to_sentence
-      }.to change { Quarter.count }.by(1)
+    it "works" do
+      expect do
+        expect(instance.save).to eq(true),
+                                 instance.errors.full_messages.to_sentence
+      end.to change { Quarter.count }.by(1)
     end
   end
 
-  describe 'updating' do
+  describe "updating" do
     let!(:quarter) { create(:quarter) }
 
     let(:payload) do
       {
         data: {
           id: quarter.id.to_s,
-          type: 'quarters',
-          attributes: { } # Todo!
-        }
+          type: "quarters",
+          attributes: {}, # Todo!
+        },
       }
     end
 
@@ -39,25 +40,25 @@ RSpec.describe QuarterResource, type: :resource do
       QuarterResource.find(payload)
     end
 
-    xit 'works (add some attributes and enable this spec)' do
-      expect {
+    xit "works (add some attributes and enable this spec)" do
+      expect do
         expect(instance.update_attributes).to eq(true)
-      }.to change { quarter.reload.updated_at }
+      end.to change { quarter.reload.updated_at }
       # .and change { quarter.foo }.to('bar') <- example
     end
   end
 
-  describe 'destroying' do
+  describe "destroying" do
     let!(:quarter) { create(:quarter) }
 
     let(:instance) do
       QuarterResource.find(id: quarter.id)
     end
 
-    it 'works' do
-      expect {
+    it "works" do
+      expect do
         expect(instance.destroy).to eq(true)
-      }.to change { Quarter.count }.by(-1)
+      end.to change { Quarter.count }.by(-1)
     end
   end
 end

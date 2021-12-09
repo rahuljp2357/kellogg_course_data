@@ -1,10 +1,11 @@
 class QuartersController < ApplicationController
-  before_action :set_quarter, only: [:show, :edit, :update, :destroy]
+  before_action :set_quarter, only: %i[show edit update destroy]
 
   # GET /quarters
   def index
     @q = Quarter.ransack(params[:q])
-    @quarters = @q.result(:distinct => true).includes(:course_offerings, :courses).page(params[:page]).per(10)
+    @quarters = @q.result(distinct: true).includes(:course_offerings,
+                                                   :courses).page(params[:page]).per(10)
   end
 
   # GET /quarters/1
@@ -18,15 +19,14 @@ class QuartersController < ApplicationController
   end
 
   # GET /quarters/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /quarters
   def create
     @quarter = Quarter.new(quarter_params)
 
     if @quarter.save
-      redirect_to @quarter, notice: 'Quarter was successfully created.'
+      redirect_to @quarter, notice: "Quarter was successfully created."
     else
       render :new
     end
@@ -35,7 +35,7 @@ class QuartersController < ApplicationController
   # PATCH/PUT /quarters/1
   def update
     if @quarter.update(quarter_params)
-      redirect_to @quarter, notice: 'Quarter was successfully updated.'
+      redirect_to @quarter, notice: "Quarter was successfully updated."
     else
       render :edit
     end
@@ -44,17 +44,18 @@ class QuartersController < ApplicationController
   # DELETE /quarters/1
   def destroy
     @quarter.destroy
-    redirect_to quarters_url, notice: 'Quarter was successfully destroyed.'
+    redirect_to quarters_url, notice: "Quarter was successfully destroyed."
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_quarter
-      @quarter = Quarter.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def quarter_params
-      params.require(:quarter).permit(:season, :year)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_quarter
+    @quarter = Quarter.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def quarter_params
+    params.require(:quarter).permit(:season, :year)
+  end
 end

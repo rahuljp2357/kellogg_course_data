@@ -21,5 +21,4 @@ class ProfessorResource < ApplicationResource
       end
     end
   end
-
 end

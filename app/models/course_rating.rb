@@ -2,7 +2,7 @@ class CourseRating < ApplicationRecord
   # Direct associations
 
   has_many   :comments,
-             :dependent => :destroy
+             dependent: :destroy
 
   belongs_to :course_offering
 
@@ -11,8 +11,8 @@ class CourseRating < ApplicationRecord
   # Indirect associations
 
   has_one    :prof,
-             :through => :course_offering,
-             :source => :prof
+             through: :course_offering,
+             source: :prof
 
   # Validations
 
@@ -21,5 +21,4 @@ class CourseRating < ApplicationRecord
   def to_s
     user.to_s
   end
-
 end

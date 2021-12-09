@@ -2,17 +2,17 @@ class Course < ApplicationRecord
   # Direct associations
 
   has_many   :course_offerings,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
   has_many   :proves,
-             :through => :course_offerings,
-             :source => :prof
+             through: :course_offerings,
+             source: :prof
 
   has_many   :quarters,
-             :through => :course_offerings,
-             :source => :quarter
+             through: :course_offerings,
+             source: :quarter
 
   # Validations
 
@@ -21,5 +21,4 @@ class Course < ApplicationRecord
   def to_s
     course_number
   end
-
 end

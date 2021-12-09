@@ -8,7 +8,7 @@ class CourseResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :course_offerings
+  has_many :course_offerings
 
   # Indirect associations
 
@@ -16,5 +16,4 @@ class CourseResource < ApplicationResource
                resource: ProfessorResource
 
   many_to_many :quarters
-
 end

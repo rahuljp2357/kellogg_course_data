@@ -17,5 +17,4 @@ class UserResource < ApplicationResource
   has_many   :course_ratings
 
   # Indirect associations
-
 end

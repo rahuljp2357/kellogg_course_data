@@ -4,10 +4,10 @@ class CourseOffering < ApplicationRecord
   belongs_to :quarter
 
   has_many   :course_ratings,
-             :dependent => :destroy
+             dependent: :destroy
 
   belongs_to :prof,
-             :class_name => "Professor"
+             class_name: "Professor"
 
   belongs_to :course
 
@@ -20,5 +20,4 @@ class CourseOffering < ApplicationRecord
   def to_s
     course.to_s
   end
-
 end

@@ -18,5 +18,4 @@ class CourseOfferingResource < ApplicationResource
   belongs_to :course
 
   # Indirect associations
-
 end

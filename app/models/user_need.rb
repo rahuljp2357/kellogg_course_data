@@ -12,5 +12,4 @@ class UserNeed < ApplicationRecord
   def to_s
     facet_1_need
   end
-
 end

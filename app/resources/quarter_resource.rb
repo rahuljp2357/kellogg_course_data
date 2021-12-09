@@ -7,10 +7,9 @@ class QuarterResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :course_offerings
+  has_many :course_offerings
 
   # Indirect associations
 
   many_to_many :courses
-
 end

@@ -13,7 +13,7 @@ class Api::V1::QuartersController < Api::V1::GraphitiController
     quarter = QuarterResource.build(params)
 
     if quarter.save
-      render jsonapi: quarter, status: 201
+      render jsonapi: quarter, status: :created
     else
       render jsonapi_errors: quarter
     end
@@ -33,7 +33,7 @@ class Api::V1::QuartersController < Api::V1::GraphitiController
     quarter = QuarterResource.find(params)
 
     if quarter.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: quarter
     end

@@ -1,10 +1,11 @@
 class ProfessorsController < ApplicationController
-  before_action :set_professor, only: [:show, :edit, :update, :destroy]
+  before_action :set_professor, only: %i[show edit update destroy]
 
   # GET /professors
   def index
     @q = Professor.ransack(params[:q])
-    @professors = @q.result(:distinct => true).includes(:course_offerings, :course_ratings, :courses).page(params[:page]).per(10)
+    @professors = @q.result(distinct: true).includes(:course_offerings,
+                                                     :course_ratings, :courses).page(params[:page]).per(10)
   end
 
   # GET /professors/1
@@ -18,15 +19,14 @@ class ProfessorsController < ApplicationController
   end
 
   # GET /professors/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /professors
   def create
     @professor = Professor.new(professor_params)
 
     if @professor.save
-      redirect_to @professor, notice: 'Professor was successfully created.'
+      redirect_to @professor, notice: "Professor was successfully created."
     else
       render :new
     end
@@ -35,7 +35,7 @@ class ProfessorsController < ApplicationController
   # PATCH/PUT /professors/1
   def update
     if @professor.update(professor_params)
-      redirect_to @professor, notice: 'Professor was successfully updated.'
+      redirect_to @professor, notice: "Professor was successfully updated."
     else
       render :edit
     end
@@ -44,17 +44,18 @@ class ProfessorsController < ApplicationController
   # DELETE /professors/1
   def destroy
     @professor.destroy
-    redirect_to professors_url, notice: 'Professor was successfully destroyed.'
+    redirect_to professors_url, notice: "Professor was successfully destroyed."
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_professor
-      @professor = Professor.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def professor_params
-      params.require(:professor).permit(:prof_first_name, :prof_second_name)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_professor
+    @professor = Professor.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def professor_params
+    params.require(:professor).permit(:prof_first_name, :prof_second_name)
+  end
 end
