@@ -7,6 +7,9 @@ class ProfessorResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :course_offerings,
+             foreign_key: :prof_id
+
   # Indirect associations
 
 end

@@ -8,6 +8,9 @@ class CourseOfferingResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :prof,
+             resource: ProfessorResource
+
   belongs_to :course
 
   # Indirect associations
