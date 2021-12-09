@@ -12,6 +12,8 @@ class ProfessorResource < ApplicationResource
 
   # Indirect associations
 
+  many_to_many :courses
+
   has_many :course_ratings do
     assign_each do |professor, course_ratings|
       course_ratings.select do |c|

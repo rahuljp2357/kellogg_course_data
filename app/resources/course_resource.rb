@@ -12,6 +12,9 @@ class CourseResource < ApplicationResource
 
   # Indirect associations
 
+  many_to_many :proves,
+               resource: ProfessorResource
+
   many_to_many :quarters
 
 end
