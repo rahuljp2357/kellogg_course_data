@@ -14,6 +14,8 @@ RSpec.describe CourseRating, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:prof) }
+
     end
 
     describe "Validations" do

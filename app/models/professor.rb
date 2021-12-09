@@ -7,6 +7,10 @@ class Professor < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :course_ratings,
+             :through => :course_offerings,
+             :source => :course_ratings
+
   # Validations
 
   # Scopes

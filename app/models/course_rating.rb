@@ -10,6 +10,10 @@ class CourseRating < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :prof,
+             :through => :course_offering,
+             :source => :prof
+
   # Validations
 
   # Scopes
