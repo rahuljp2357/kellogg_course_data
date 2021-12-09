@@ -1,6 +1,9 @@
 class CourseRating < ApplicationRecord
   # Direct associations
 
+  has_many   :comments,
+             :dependent => :destroy
+
   belongs_to :course_offering
 
   belongs_to :user
