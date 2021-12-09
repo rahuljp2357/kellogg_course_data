@@ -1,0 +1,86 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Course Rating #<%= course_rating.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>User</dt>
+      <!-- Display user_id start -->
+      <dd><%= course_rating.user_id %></dd>
+      <!-- Display user_id end -->
+
+      <dt>Facet 1 rating</dt>
+      <!-- Display facet_1_rating start -->
+      <dd><%= course_rating.facet_1_rating %></dd>
+      <!-- Display facet_1_rating end -->
+
+      <dt>Facet 2 rating</dt>
+      <!-- Display facet_2_rating start -->
+      <dd><%= course_rating.facet_2_rating %></dd>
+      <!-- Display facet_2_rating end -->
+
+      <dt>Facet 3 rating</dt>
+      <!-- Display facet_3_rating start -->
+      <dd><%= course_rating.facet_3_rating %></dd>
+      <!-- Display facet_3_rating end -->
+
+      <dt>Facet 4 rating</dt>
+      <!-- Display facet_4_rating start -->
+      <dd><%= course_rating.facet_4_rating %></dd>
+      <!-- Display facet_4_rating end -->
+
+      <dt>Facet 5 rating</dt>
+      <!-- Display facet_5_rating start -->
+      <dd><%= course_rating.facet_5_rating %></dd>
+      <!-- Display facet_5_rating end -->
+
+      <dt>Descriptive q1</dt>
+      <!-- Display descriptive_q1 start -->
+      <dd><%= course_rating.descriptive_q1 %></dd>
+      <!-- Display descriptive_q1 end -->
+
+      <dt>Descriptive q2</dt>
+      <!-- Display descriptive_q2 start -->
+      <dd><%= course_rating.descriptive_q2 %></dd>
+      <!-- Display descriptive_q2 end -->
+
+      <dt>Descriptive q3</dt>
+      <!-- Display descriptive_q3 start -->
+      <dd><%= course_rating.descriptive_q3 %></dd>
+      <!-- Display descriptive_q3 end -->
+
+      <dt>Course offering</dt>
+      <!-- Display course_offering_id start -->
+      <dd><%= course_rating.course_offering_id %></dd>
+      <!-- Display course_offering_id end -->
+
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back course_rating, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link course_rating start -->
+      <div class="col">
+        <%= link_to edit_course_rating_url(course_rating), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link course_rating end -->
+
+      <!-- Delete link course_rating start -->
+      <div class="col">
+        <%= link_to course_rating, method: :delete, data: { confirm: "Do you really want to delete this course_rating?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link course_rating end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(course_rating.updated_at) %> ago
+  </div>
+</div>

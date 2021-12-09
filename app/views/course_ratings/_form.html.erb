@@ -1,0 +1,265 @@
+<% was_validated = course_rating.errors.any? %>
+
+<%= form_with(model: course_rating, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <% user_class = "form-control" %>
+    <% user_was_invalid = course_rating.errors.include?(:user) %>
+
+    <% if was_validated %>
+      <% if user_was_invalid %>
+        <% user_class << " is-invalid" %>
+      <% else %>
+        <% user_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :user_id %>
+    <!-- Input for user_id start -->
+    <%= f.number_field :user_id, class: user_class, placeholder: "Enter user" %>
+    <!-- Input for user_id end -->
+    <% if user_was_invalid %>
+      <% course_rating.errors.full_messages_for(:user).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for user_id end -->
+  <!-- Label and input for facet_1_rating start -->
+  <div class="form-group">
+    <% facet_1_rating_class = "form-control" %>
+    <% facet_1_rating_was_invalid = course_rating.errors.include?(:facet_1_rating) %>
+
+    <% if was_validated %>
+      <% if facet_1_rating_was_invalid %>
+        <% facet_1_rating_class << " is-invalid" %>
+      <% else %>
+        <% facet_1_rating_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :facet_1_rating %>
+    <!-- Input for facet_1_rating start -->
+    <%= f.number_field :facet_1_rating, class: facet_1_rating_class, placeholder: "Enter facet 1 rating" %>
+    <!-- Input for facet_1_rating end -->
+    <% if facet_1_rating_was_invalid %>
+      <% course_rating.errors.full_messages_for(:facet_1_rating).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for facet_1_rating end -->
+  <!-- Label and input for facet_2_rating start -->
+  <div class="form-group">
+    <% facet_2_rating_class = "form-control" %>
+    <% facet_2_rating_was_invalid = course_rating.errors.include?(:facet_2_rating) %>
+
+    <% if was_validated %>
+      <% if facet_2_rating_was_invalid %>
+        <% facet_2_rating_class << " is-invalid" %>
+      <% else %>
+        <% facet_2_rating_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :facet_2_rating %>
+    <!-- Input for facet_2_rating start -->
+    <%= f.number_field :facet_2_rating, class: facet_2_rating_class, placeholder: "Enter facet 2 rating" %>
+    <!-- Input for facet_2_rating end -->
+    <% if facet_2_rating_was_invalid %>
+      <% course_rating.errors.full_messages_for(:facet_2_rating).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for facet_2_rating end -->
+  <!-- Label and input for facet_3_rating start -->
+  <div class="form-group">
+    <% facet_3_rating_class = "form-control" %>
+    <% facet_3_rating_was_invalid = course_rating.errors.include?(:facet_3_rating) %>
+
+    <% if was_validated %>
+      <% if facet_3_rating_was_invalid %>
+        <% facet_3_rating_class << " is-invalid" %>
+      <% else %>
+        <% facet_3_rating_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :facet_3_rating %>
+    <!-- Input for facet_3_rating start -->
+    <%= f.number_field :facet_3_rating, class: facet_3_rating_class, placeholder: "Enter facet 3 rating" %>
+    <!-- Input for facet_3_rating end -->
+    <% if facet_3_rating_was_invalid %>
+      <% course_rating.errors.full_messages_for(:facet_3_rating).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for facet_3_rating end -->
+  <!-- Label and input for facet_4_rating start -->
+  <div class="form-group">
+    <% facet_4_rating_class = "form-control" %>
+    <% facet_4_rating_was_invalid = course_rating.errors.include?(:facet_4_rating) %>
+
+    <% if was_validated %>
+      <% if facet_4_rating_was_invalid %>
+        <% facet_4_rating_class << " is-invalid" %>
+      <% else %>
+        <% facet_4_rating_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :facet_4_rating %>
+    <!-- Input for facet_4_rating start -->
+    <%= f.number_field :facet_4_rating, class: facet_4_rating_class, placeholder: "Enter facet 4 rating" %>
+    <!-- Input for facet_4_rating end -->
+    <% if facet_4_rating_was_invalid %>
+      <% course_rating.errors.full_messages_for(:facet_4_rating).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for facet_4_rating end -->
+  <!-- Label and input for facet_5_rating start -->
+  <div class="form-group">
+    <% facet_5_rating_class = "form-control" %>
+    <% facet_5_rating_was_invalid = course_rating.errors.include?(:facet_5_rating) %>
+
+    <% if was_validated %>
+      <% if facet_5_rating_was_invalid %>
+        <% facet_5_rating_class << " is-invalid" %>
+      <% else %>
+        <% facet_5_rating_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :facet_5_rating %>
+    <!-- Input for facet_5_rating start -->
+    <%= f.number_field :facet_5_rating, class: facet_5_rating_class, placeholder: "Enter facet 5 rating" %>
+    <!-- Input for facet_5_rating end -->
+    <% if facet_5_rating_was_invalid %>
+      <% course_rating.errors.full_messages_for(:facet_5_rating).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for facet_5_rating end -->
+  <!-- Label and input for descriptive_q1 start -->
+  <div class="form-group">
+    <% descriptive_q1_class = "form-control" %>
+    <% descriptive_q1_was_invalid = course_rating.errors.include?(:descriptive_q1) %>
+
+    <% if was_validated %>
+      <% if descriptive_q1_was_invalid %>
+        <% descriptive_q1_class << " is-invalid" %>
+      <% else %>
+        <% descriptive_q1_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :descriptive_q1 %>
+    <!-- Input for descriptive_q1 start -->
+    <%= f.text_field :descriptive_q1, class: descriptive_q1_class, placeholder: "Enter descriptive q1" %>
+    <!-- Input for descriptive_q1 end -->
+    <% if descriptive_q1_was_invalid %>
+      <% course_rating.errors.full_messages_for(:descriptive_q1).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for descriptive_q1 end -->
+  <!-- Label and input for descriptive_q2 start -->
+  <div class="form-group">
+    <% descriptive_q2_class = "form-control" %>
+    <% descriptive_q2_was_invalid = course_rating.errors.include?(:descriptive_q2) %>
+
+    <% if was_validated %>
+      <% if descriptive_q2_was_invalid %>
+        <% descriptive_q2_class << " is-invalid" %>
+      <% else %>
+        <% descriptive_q2_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :descriptive_q2 %>
+    <!-- Input for descriptive_q2 start -->
+    <%= f.text_field :descriptive_q2, class: descriptive_q2_class, placeholder: "Enter descriptive q2" %>
+    <!-- Input for descriptive_q2 end -->
+    <% if descriptive_q2_was_invalid %>
+      <% course_rating.errors.full_messages_for(:descriptive_q2).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for descriptive_q2 end -->
+  <!-- Label and input for descriptive_q3 start -->
+  <div class="form-group">
+    <% descriptive_q3_class = "form-control" %>
+    <% descriptive_q3_was_invalid = course_rating.errors.include?(:descriptive_q3) %>
+
+    <% if was_validated %>
+      <% if descriptive_q3_was_invalid %>
+        <% descriptive_q3_class << " is-invalid" %>
+      <% else %>
+        <% descriptive_q3_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :descriptive_q3 %>
+    <!-- Input for descriptive_q3 start -->
+    <%= f.text_field :descriptive_q3, class: descriptive_q3_class, placeholder: "Enter descriptive q3" %>
+    <!-- Input for descriptive_q3 end -->
+    <% if descriptive_q3_was_invalid %>
+      <% course_rating.errors.full_messages_for(:descriptive_q3).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for descriptive_q3 end -->
+  <!-- Label and input for course_offering_id start -->
+  <div class="form-group">
+    <% course_offering_class = "form-control" %>
+    <% course_offering_was_invalid = course_rating.errors.include?(:course_offering) %>
+
+    <% if was_validated %>
+      <% if course_offering_was_invalid %>
+        <% course_offering_class << " is-invalid" %>
+      <% else %>
+        <% course_offering_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :course_offering_id %>
+    <!-- Input for course_offering_id start -->
+    <%= f.number_field :course_offering_id, class: course_offering_class, placeholder: "Enter course offering" %>
+    <!-- Input for course_offering_id end -->
+    <% if course_offering_was_invalid %>
+      <% course_rating.errors.full_messages_for(:course_offering).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for course_offering_id end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
