@@ -250,7 +250,7 @@
 
     <%= f.label :course_offering_id %>
     <!-- Input for course_offering_id start -->
-    <%= f.number_field :course_offering_id, class: course_offering_class, placeholder: "Enter course offering" %>
+    <%= f.collection_select :course_offering_id, CourseOffering.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for course_offering_id end -->
     <% if course_offering_was_invalid %>
       <% course_rating.errors.full_messages_for(:course_offering).each do |message| %>

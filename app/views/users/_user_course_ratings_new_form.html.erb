@@ -93,7 +93,7 @@
     <%= f.label :course_offering_id %>
 
     <!-- Input for course_offering_id start -->
-    <%= f.text_field :course_offering_id, class: "form-control" %>
+    <%= f.collection_select :course_offering_id, CourseOffering.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for course_offering_id end -->
   </div>
   <!-- Label and input for course_offering_id end -->
