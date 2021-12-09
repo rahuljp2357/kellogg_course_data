@@ -1,27 +1,22 @@
 class QuartersController < ApplicationController
   before_action :set_quarter, only: %i[show edit update destroy]
 
-  # GET /quarters
   def index
     @q = Quarter.ransack(params[:q])
     @quarters = @q.result(distinct: true).includes(:course_offerings,
                                                    :courses).page(params[:page]).per(10)
   end
 
-  # GET /quarters/1
   def show
     @course_offering = CourseOffering.new
   end
 
-  # GET /quarters/new
   def new
     @quarter = Quarter.new
   end
 
-  # GET /quarters/1/edit
   def edit; end
 
-  # POST /quarters
   def create
     @quarter = Quarter.new(quarter_params)
 
@@ -32,7 +27,6 @@ class QuartersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /quarters/1
   def update
     if @quarter.update(quarter_params)
       redirect_to @quarter, notice: "Quarter was successfully updated."
@@ -41,7 +35,6 @@ class QuartersController < ApplicationController
     end
   end
 
-  # DELETE /quarters/1
   def destroy
     @quarter.destroy
     redirect_to quarters_url, notice: "Quarter was successfully destroyed."
@@ -49,12 +42,10 @@ class QuartersController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_quarter
     @quarter = Quarter.find(params[:id])
   end
 
-  # Only allow a trusted parameter "white list" through.
   def quarter_params
     params.require(:quarter).permit(:season, :year)
   end
