@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Course Ratings
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @professor.course_ratings.each do |course_rating| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/course_ratings/<%= course_rating.id %>">
+          <%= course_rating %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

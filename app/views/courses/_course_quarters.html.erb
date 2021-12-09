@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Quarters
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @course.quarters.each do |quarter| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/quarters/<%= quarter.id %>">
+          <%= quarter %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
