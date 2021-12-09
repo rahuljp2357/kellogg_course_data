@@ -11,4 +11,6 @@ class QuarterResource < ApplicationResource
 
   # Indirect associations
 
+  many_to_many :courses
+
 end
