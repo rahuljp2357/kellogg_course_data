@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :user_needs
   resources :comments
   resources :course_ratings
   resources :quarters

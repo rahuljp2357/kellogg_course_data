@@ -1,0 +1,161 @@
+<% was_validated = user_need.errors.any? %>
+
+<%= form_with(model: user_need, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for facet_1_need start -->
+  <div class="form-group">
+    <% facet_1_need_class = "form-control" %>
+    <% facet_1_need_was_invalid = user_need.errors.include?(:facet_1_need) %>
+
+    <% if was_validated %>
+      <% if facet_1_need_was_invalid %>
+        <% facet_1_need_class << " is-invalid" %>
+      <% else %>
+        <% facet_1_need_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :facet_1_need %>
+    <!-- Input for facet_1_need start -->
+    <%= f.number_field :facet_1_need, class: facet_1_need_class, placeholder: "Enter facet 1 need" %>
+    <!-- Input for facet_1_need end -->
+    <% if facet_1_need_was_invalid %>
+      <% user_need.errors.full_messages_for(:facet_1_need).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for facet_1_need end -->
+  <!-- Label and input for facet_2_need start -->
+  <div class="form-group">
+    <% facet_2_need_class = "form-control" %>
+    <% facet_2_need_was_invalid = user_need.errors.include?(:facet_2_need) %>
+
+    <% if was_validated %>
+      <% if facet_2_need_was_invalid %>
+        <% facet_2_need_class << " is-invalid" %>
+      <% else %>
+        <% facet_2_need_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :facet_2_need %>
+    <!-- Input for facet_2_need start -->
+    <%= f.number_field :facet_2_need, class: facet_2_need_class, placeholder: "Enter facet 2 need" %>
+    <!-- Input for facet_2_need end -->
+    <% if facet_2_need_was_invalid %>
+      <% user_need.errors.full_messages_for(:facet_2_need).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for facet_2_need end -->
+  <!-- Label and input for facet_3_need start -->
+  <div class="form-group">
+    <% facet_3_need_class = "form-control" %>
+    <% facet_3_need_was_invalid = user_need.errors.include?(:facet_3_need) %>
+
+    <% if was_validated %>
+      <% if facet_3_need_was_invalid %>
+        <% facet_3_need_class << " is-invalid" %>
+      <% else %>
+        <% facet_3_need_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :facet_3_need %>
+    <!-- Input for facet_3_need start -->
+    <%= f.number_field :facet_3_need, class: facet_3_need_class, placeholder: "Enter facet 3 need" %>
+    <!-- Input for facet_3_need end -->
+    <% if facet_3_need_was_invalid %>
+      <% user_need.errors.full_messages_for(:facet_3_need).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for facet_3_need end -->
+  <!-- Label and input for facet_4_need start -->
+  <div class="form-group">
+    <% facet_4_need_class = "form-control" %>
+    <% facet_4_need_was_invalid = user_need.errors.include?(:facet_4_need) %>
+
+    <% if was_validated %>
+      <% if facet_4_need_was_invalid %>
+        <% facet_4_need_class << " is-invalid" %>
+      <% else %>
+        <% facet_4_need_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :facet_4_need %>
+    <!-- Input for facet_4_need start -->
+    <%= f.number_field :facet_4_need, class: facet_4_need_class, placeholder: "Enter facet 4 need" %>
+    <!-- Input for facet_4_need end -->
+    <% if facet_4_need_was_invalid %>
+      <% user_need.errors.full_messages_for(:facet_4_need).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for facet_4_need end -->
+  <!-- Label and input for facet_5_need start -->
+  <div class="form-group">
+    <% facet_5_need_class = "form-control" %>
+    <% facet_5_need_was_invalid = user_need.errors.include?(:facet_5_need) %>
+
+    <% if was_validated %>
+      <% if facet_5_need_was_invalid %>
+        <% facet_5_need_class << " is-invalid" %>
+      <% else %>
+        <% facet_5_need_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :facet_5_need %>
+    <!-- Input for facet_5_need start -->
+    <%= f.number_field :facet_5_need, class: facet_5_need_class, placeholder: "Enter facet 5 need" %>
+    <!-- Input for facet_5_need end -->
+    <% if facet_5_need_was_invalid %>
+      <% user_need.errors.full_messages_for(:facet_5_need).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for facet_5_need end -->
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <% user_class = "form-control" %>
+    <% user_was_invalid = user_need.errors.include?(:user) %>
+
+    <% if was_validated %>
+      <% if user_was_invalid %>
+        <% user_class << " is-invalid" %>
+      <% else %>
+        <% user_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :user_id %>
+    <!-- Input for user_id start -->
+    <%= f.number_field :user_id, class: user_class, placeholder: "Enter user" %>
+    <!-- Input for user_id end -->
+    <% if user_was_invalid %>
+      <% user_need.errors.full_messages_for(:user).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for user_id end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
