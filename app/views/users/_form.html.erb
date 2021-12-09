@@ -1,7 +1,6 @@
 <% was_validated = user.errors.any? %>
 
 <%= form_with(model: user, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for user_first_name start -->
   <div class="form-group">
     <% user_first_name_class = "form-control" %>
     <% user_first_name_was_invalid = user.errors.include?(:user_first_name) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :user_first_name %>
-    <!-- Input for user_first_name start -->
     <%= f.text_field :user_first_name, class: user_first_name_class, placeholder: "Enter user first name" %>
-    <!-- Input for user_first_name end -->
     <% if user_first_name_was_invalid %>
       <% user.errors.full_messages_for(:user_first_name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for user_first_name end -->
-  <!-- Label and input for user_second_name start -->
   <div class="form-group">
     <% user_second_name_class = "form-control" %>
     <% user_second_name_was_invalid = user.errors.include?(:user_second_name) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :user_second_name %>
-    <!-- Input for user_second_name start -->
     <%= f.text_field :user_second_name, class: user_second_name_class, placeholder: "Enter user second name" %>
-    <!-- Input for user_second_name end -->
     <% if user_second_name_was_invalid %>
       <% user.errors.full_messages_for(:user_second_name).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for user_second_name end -->
-  <!-- Label and input for class_of start -->
   <div class="form-group">
     <% class_of_class = "form-control" %>
     <% class_of_was_invalid = user.errors.include?(:class_of) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :class_of %>
-    <!-- Input for class_of start -->
     <%= f.number_field :class_of, class: class_of_class, placeholder: "Enter class of" %>
-    <!-- Input for class_of end -->
     <% if class_of_was_invalid %>
       <% user.errors.full_messages_for(:class_of).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,6 +67,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for class_of end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

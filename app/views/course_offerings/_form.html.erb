@@ -1,7 +1,6 @@
 <% was_validated = course_offering.errors.any? %>
 
 <%= form_with(model: course_offering, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for course_id start -->
   <div class="form-group">
     <% course_class = "form-control" %>
     <% course_was_invalid = course_offering.errors.include?(:course) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :course_id %>
-    <!-- Input for course_id start -->
     <%= f.collection_select :course_id, Course.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for course_id end -->
     <% if course_was_invalid %>
       <% course_offering.errors.full_messages_for(:course).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for course_id end -->
-  <!-- Label and input for quarter_id start -->
   <div class="form-group">
     <% quarter_class = "form-control" %>
     <% quarter_was_invalid = course_offering.errors.include?(:quarter) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :quarter_id %>
-    <!-- Input for quarter_id start -->
     <%= f.collection_select :quarter_id, Quarter.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for quarter_id end -->
     <% if quarter_was_invalid %>
       <% course_offering.errors.full_messages_for(:quarter).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,8 +45,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for quarter_id end -->
-  <!-- Label and input for prof_id start -->
   <div class="form-group">
     <% prof_class = "form-control" %>
     <% prof_was_invalid = course_offering.errors.include?(:prof) %>
@@ -67,9 +58,7 @@
     <% end %>
 
     <%= f.label :prof_id %>
-    <!-- Input for prof_id start -->
     <%= f.collection_select :prof_id, Professor.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for prof_id end -->
     <% if prof_was_invalid %>
       <% course_offering.errors.full_messages_for(:prof).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -78,6 +67,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for prof_id end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

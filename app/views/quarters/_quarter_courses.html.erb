@@ -6,11 +6,9 @@
   <ul class="list-group list-group-flush">
     <% @quarter.courses.each do |course| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/courses/<%= course.id %>">
           <%= course %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

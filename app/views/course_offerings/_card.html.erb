@@ -6,31 +6,25 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Course</dt>
-      <!-- Display course_id start -->
       <dd>
         <% if @course_offering.course.present? %>
           <%= link_to course_offering.course, course_offering.course %>
         <% end %>
       </dd>
-      <!-- Display course_id end -->
 
       <dt>Quarter</dt>
-      <!-- Display quarter_id start -->
       <dd>
         <% if @course_offering.quarter.present? %>
           <%= link_to course_offering.quarter, course_offering.quarter %>
         <% end %>
       </dd>
-      <!-- Display quarter_id end -->
 
       <dt>Prof</dt>
-      <!-- Display prof_id start -->
       <dd>
         <% if @course_offering.prof.present? %>
           <%= link_to course_offering.prof, course_offering.prof %>
         <% end %>
       </dd>
-      <!-- Display prof_id end -->
 
     </dl>
 
@@ -39,21 +33,17 @@
         <%= link_to_show_or_back course_offering, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link course_offering start -->
       <div class="col">
         <%= link_to edit_course_offering_url(course_offering), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link course_offering end -->
 
-      <!-- Delete link course_offering start -->
       <div class="col">
         <%= link_to course_offering, method: :delete, data: { confirm: "Do you really want to delete this course_offering?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link course_offering end -->
     </div>
   </div>
 

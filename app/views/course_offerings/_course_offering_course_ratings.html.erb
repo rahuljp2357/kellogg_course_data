@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @course_offering.course_ratings.each do |course_rating| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <%= link_to course_rating, course_rating %>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <% if current_user == course_rating.user %>
           <%= link_to course_rating, method: :delete do %>
             <i class="fas fa-trash-alt"></i>
           <% end %>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="course_offering_course_ratings_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "course_offerings/course_offering_course_ratings_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

@@ -1,7 +1,6 @@
 <% was_validated = quarter.errors.any? %>
 
 <%= form_with(model: quarter, local: true, novalidate: true, class: "mb-3") do |f| %>
-  <!-- Label and input for season start -->
   <div class="form-group">
     <% season_class = "form-control" %>
     <% season_was_invalid = quarter.errors.include?(:season) %>
@@ -15,9 +14,7 @@
     <% end %>
 
     <%= f.label :season %>
-    <!-- Input for season start -->
     <%= f.text_field :season, class: season_class, placeholder: "Enter season" %>
-    <!-- Input for season end -->
     <% if season_was_invalid %>
       <% quarter.errors.full_messages_for(:season).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -26,8 +23,6 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for season end -->
-  <!-- Label and input for year start -->
   <div class="form-group">
     <% year_class = "form-control" %>
     <% year_was_invalid = quarter.errors.include?(:year) %>
@@ -41,9 +36,7 @@
     <% end %>
 
     <%= f.label :year %>
-    <!-- Input for year start -->
     <%= f.number_field :year, class: year_class, placeholder: "Enter year" %>
-    <!-- Input for year end -->
     <% if year_was_invalid %>
       <% quarter.errors.full_messages_for(:year).each do |message| %>
         <div class="invalid-feedback d-flex">
@@ -52,6 +45,5 @@
       <% end %>
     <% end %>
   </div>
-  <!-- Label and input for year end -->
   <%= f.button class: "btn btn-outline-secondary btn-block" %>
 <% end %>

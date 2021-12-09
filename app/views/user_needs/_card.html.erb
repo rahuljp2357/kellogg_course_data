@@ -6,38 +6,26 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Facet 1 need</dt>
-      <!-- Display facet_1_need start -->
       <dd><%= user_need.facet_1_need %></dd>
-      <!-- Display facet_1_need end -->
 
       <dt>Facet 2 need</dt>
-      <!-- Display facet_2_need start -->
       <dd><%= user_need.facet_2_need %></dd>
-      <!-- Display facet_2_need end -->
 
       <dt>Facet 3 need</dt>
-      <!-- Display facet_3_need start -->
       <dd><%= user_need.facet_3_need %></dd>
-      <!-- Display facet_3_need end -->
 
       <dt>Facet 4 need</dt>
-      <!-- Display facet_4_need start -->
       <dd><%= user_need.facet_4_need %></dd>
-      <!-- Display facet_4_need end -->
 
       <dt>Facet 5 need</dt>
-      <!-- Display facet_5_need start -->
       <dd><%= user_need.facet_5_need %></dd>
-      <!-- Display facet_5_need end -->
 
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @user_need.user.present? %>
           <%= link_to user_need.user, user_need.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
     </dl>
 
@@ -46,21 +34,17 @@
         <%= link_to_show_or_back user_need, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link user_need start -->
       <div class="col">
         <%= link_to edit_user_need_url(user_need), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link user_need end -->
 
-      <!-- Delete link user_need start -->
       <div class="col">
         <%= link_to user_need, method: :delete, data: { confirm: "Do you really want to delete this user_need?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link user_need end -->
     </div>
   </div>
 
